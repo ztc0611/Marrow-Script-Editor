@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cocwu0u4xq3l7"]
+
+[sub_resource type="SystemFont" id="SystemFont_0e7d7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hs2yq"]
+bg_color = Color(0.117647, 0.27451, 0.380392, 0.858824)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[resource]
+default_font_size = 30
+Fonts/fonts/large = SubResource("SystemFont_0e7d7")
+Label/font_sizes/font_size = 24
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+OptionButton/font_sizes/font_size = 28
+Panel/styles/panel = SubResource("StyleBoxFlat_hs2yq")
+TextEdit/font_sizes/font_size = 34

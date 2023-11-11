@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp0yr4lgytwj3"]
+
+[ext_resource type="Theme" uid="uid://cocwu0u4xq3l7" path="res://Theme2.tres" id="1_4fn62"]
+[ext_resource type="Script" path="res://Right/ScriptElement.gd" id="2_h3gim"]
+
+[node name="ScriptElement" type="Panel"]
+custom_minimum_size = Vector2(500, 236)
+offset_right = 400.0
+offset_bottom = 200.0
+theme = ExtResource("1_4fn62")
+script = ExtResource("2_h3gim")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4fn62")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 42)
+layout_mode = 2
+alignment = 1
+item_count = 6
+popup/item_0/text = "🗑️ ⚠Delete⚠ 🗑️"
+popup/item_0/id = 0
+popup/item_1/text = "↳💭Comment"
+popup/item_1/id = 3
+popup/item_2/text = ""
+popup/item_2/id = 5
+popup/item_2/separator = true
+popup/item_3/text = ">💬NPC Talk💬"
+popup/item_3/id = 100
+popup/item_4/text = "💬￬NPC Mutter"
+popup/item_4/id = 101
+popup/item_5/text = "💬❗NPC Yell"
+popup/item_5/id = 102
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Me? Getting married and having a happy life would be OK, I guess..."
+wrap_mode = 1
+
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/TextEdit" to="." method="_on_text_edit_focus_entered"]
+[connection signal="focus_exited" from="MarginContainer/VBoxContainer/TextEdit" to="." method="_on_text_edit_focus_exited"]
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/TextEdit" to="." method="_on_text_edit_text_changed"]

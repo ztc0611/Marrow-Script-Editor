@@ -1,0 +1,221 @@
+[gd_scene load_steps=13 format=3 uid="uid://b4co7p8pdes7c"]
+
+[ext_resource type="Script" path="res://MenuBar.gd" id="1_45vwg"]
+[ext_resource type="PackedScene" uid="uid://cxc73re3ai44h" path="res://List_Element.tscn" id="1_ivi7j"]
+[ext_resource type="Script" path="res://MenuBarDrag.gd" id="1_ooris"]
+[ext_resource type="Script" path="res://V.gd" id="2_gdmhi"]
+[ext_resource type="Theme" uid="uid://bqssc5gl8k82k" path="res://Theme1.tres" id="2_kh1tc"]
+[ext_resource type="Script" path="res://Left.gd" id="5_l57rc"]
+[ext_resource type="Script" path="res://Right/Right.gd" id="8_m1xpg"]
+
+[sub_resource type="Gradient" id="Gradient_6s63j"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.496774, 0.996774)
+colors = PackedColorArray(0.714289, 0.313964, 0.522272, 1, 0.77819, 0.399966, 0.895645, 1, 0.452219, 0.233523, 0.684839, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vhmsu"]
+gradient = SubResource("Gradient_6s63j")
+fill_to = Vector2(1, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_f46k6"]
+offsets = PackedFloat32Array(0.00699301, 1)
+colors = PackedColorArray(0.158551, 0.0566549, 0.484192, 0.439216, 0.176688, 0.066317, 0.529069, 0.419608)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t4s8h"]
+gradient = SubResource("Gradient_f46k6")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qr04"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 0.192157)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Bg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+mouse_filter = 0
+texture = SubResource("GradientTexture2D_vhmsu")
+
+[node name="MenuBarDrag" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 51.0
+grow_horizontal = 2
+action_mode = 0
+texture_normal = SubResource("GradientTexture1D_t4s8h")
+texture_pressed = SubResource("GradientTexture1D_t4s8h")
+stretch_mode = 0
+script = ExtResource("1_ooris")
+
+[node name="Label" type="Label" parent="MenuBarDrag"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "MarSEdit"
+
+[node name="Version" type="Label" parent="MenuBarDrag"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 22
+text = "v1.0.0   "
+horizontal_alignment = 2
+script = ExtResource("2_gdmhi")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="MenuBarDrag/Version"]
+
+[node name="MenuBar" type="MenuBar" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -1468.0
+offset_bottom = 50.0
+grow_horizontal = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+script = ExtResource("1_45vwg")
+
+[node name="File" type="PopupMenu" parent="MenuBar"]
+theme = ExtResource("2_kh1tc")
+theme_override_font_sizes/font_size = 100
+item_count = 2
+item_0/text = "Save"
+item_0/id = 0
+item_1/text = ""
+item_1/id = 1
+item_1/separator = true
+
+[node name="Edit" type="PopupMenu" parent="MenuBar"]
+theme = ExtResource("2_kh1tc")
+item_count = 5
+item_0/text = "Undo"
+item_0/id = 0
+item_1/text = "Redo"
+item_1/id = 1
+item_2/text = ""
+item_2/id = 2
+item_2/separator = true
+item_3/text = "Copy"
+item_3/id = 0
+item_4/text = "Paste"
+item_4/id = 3
+
+[node name="Program" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_filter = 2
+
+[node name="Left" type="Control" parent="Program"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 480.0
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_l57rc")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Program/Left"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0qr04")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Program/Left/ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = -1
+
+[node name="Add" parent="Program/Left/ScrollContainer/VBoxContainer" instance=ExtResource("1_ivi7j")]
+custom_minimum_size = Vector2(2.08165e-12, 137)
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="Button" parent="Program/Left/ScrollContainer/VBoxContainer/Add" index="1"]
+theme_override_font_sizes/font_size = 75
+text = "+"
+
+[node name="MarginContainer" parent="Program/Left/ScrollContainer/VBoxContainer/Add/Button" index="0"]
+visible = false
+
+[node name="Right" type="Control" parent="Program"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+mouse_filter = 1
+script = ExtResource("8_m1xpg")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Program/Right"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Program/Right/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Program/Right/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_kh1tc")
+theme_override_constants/separation = 15
+
+[connection signal="button_down" from="MenuBarDrag" to="MenuBarDrag" method="_on_button_down"]
+[connection signal="index_pressed" from="MenuBar/File" to="MenuBar" method="_on_file_index_pressed"]
+[connection signal="index_pressed" from="MenuBar/Edit" to="MenuBar" method="_on_edit_index_pressed"]
+
+[editable path="Program/Left/ScrollContainer/VBoxContainer/Add"]

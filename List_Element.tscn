@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxc73re3ai44h"]
+
+[ext_resource type="Theme" uid="uid://bqssc5gl8k82k" path="res://Theme1.tres" id="1_75sgk"]
+[ext_resource type="Script" path="res://List_Element.gd" id="2_yhfsd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1s4v"]
+bg_color = Color(0.847059, 0.435294, 0.698039, 0.643137)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.133333)
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7851r"]
+bg_color = Color(0.847059, 0.435294, 0.698039, 0.803922)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.133333)
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1ytk"]
+bg_color = Color(0.819608, 0.407843, 0.890196, 0.827451)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.133333)
+shadow_offset = Vector2(1, 1)
+
+[node name="ListElement" type="MarginContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 122)
+offset_right = 479.0
+offset_bottom = 122.0
+theme = ExtResource("1_75sgk")
+script = ExtResource("2_yhfsd")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("1_75sgk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v1s4v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7851r")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f1ytk")
+text_overrun_behavior = 3
+clip_text = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="Button/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "MD-001: Hello, How are you today, \\n?"
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3

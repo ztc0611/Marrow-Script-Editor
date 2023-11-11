@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl044aihfvcmd"]
+
+[ext_resource type="Theme" uid="uid://cocwu0u4xq3l7" path="res://Theme2.tres" id="1_0ur5n"]
+[ext_resource type="Script" path="res://Right/Branch.gd" id="2_8ronc"]
+[ext_resource type="PackedScene" uid="uid://c7l7aswsgxsr7" path="res://Right/AddButton.tscn" id="3_uk0fd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elpxe"]
+bg_color = Color(0.160784, 0.443137, 0.580392, 0.721569)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Branch" type="VBoxContainer"]
+size_flags_horizontal = 3
+theme = ExtResource("1_0ur5n")
+theme_override_constants/separation = 10
+script = ExtResource("2_8ronc")
+
+[node name="Title" type="Panel" parent="."]
+custom_minimum_size = Vector2(500, 75)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_elpxe")
+
+[node name="Label" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 52
+text = "Branch A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AddButton" parent="." instance=ExtResource("3_uk0fd")]
+layout_mode = 2
