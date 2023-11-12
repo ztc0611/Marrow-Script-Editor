@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Right/ScriptElement.gd" id="2_h3gim"]
 
 [node name="ScriptElement" type="Panel"]
-custom_minimum_size = Vector2(500, 236)
+custom_minimum_size = Vector2(500, 64)
 offset_right = 400.0
 offset_bottom = 200.0
 theme = ExtResource("1_4fn62")
@@ -26,22 +26,41 @@ layout_mode = 2
 custom_minimum_size = Vector2(2.08165e-12, 42)
 layout_mode = 2
 alignment = 1
-item_count = 6
+item_count = 14
 popup/item_0/text = "🗑️ ⚠Delete⚠ 🗑️"
 popup/item_0/id = 0
-popup/item_1/text = "↳💭Comment"
+popup/item_1/text = "↳💭Developer Comment"
 popup/item_1/id = 3
 popup/item_2/text = ""
 popup/item_2/id = 5
 popup/item_2/separator = true
-popup/item_3/text = ">💬NPC Talk💬"
+popup/item_3/text = "💬💬Talk💬💬"
 popup/item_3/id = 100
-popup/item_4/text = "💬￬NPC Mutter"
+popup/item_4/text = "💬￬Mutter"
 popup/item_4/id = 101
-popup/item_5/text = "💬❗NPC Yell"
+popup/item_5/text = "💬❗Yell"
 popup/item_5/id = 102
+popup/item_6/text = ""
+popup/item_6/id = 9
+popup/item_6/separator = true
+popup/item_7/text = "▶️💬Talk AutoResume"
+popup/item_7/id = 120
+popup/item_8/text = "▶️💬￬Mutter AutoResume"
+popup/item_8/id = 121
+popup/item_9/text = "▶️💬❗Yell AutoResume"
+popup/item_9/id = 122
+popup/item_10/text = ""
+popup/item_10/id = 8
+popup/item_10/separator = true
+popup/item_11/text = "⏯💬Talk Resume"
+popup/item_11/id = 140
+popup/item_12/text = "⏯💬￬Mutter Resume"
+popup/item_12/id = 141
+popup/item_13/text = "⏯💬❗Yell Resume"
+popup/item_13/id = 142
 
 [node name="TextEdit" type="TextEdit" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 placeholder_text = "Me? Getting married and having a happy life would be OK, I guess..."

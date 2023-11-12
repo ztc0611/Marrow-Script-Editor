@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4co7p8pdes7c"]
+[gd_scene load_steps=17 format=3 uid="uid://b4co7p8pdes7c"]
 
 [ext_resource type="Script" path="res://MenuBar.gd" id="1_45vwg"]
 [ext_resource type="PackedScene" uid="uid://cxc73re3ai44h" path="res://List_Element.tscn" id="1_ivi7j"]
@@ -7,11 +7,14 @@
 [ext_resource type="Theme" uid="uid://bqssc5gl8k82k" path="res://Theme1.tres" id="2_kh1tc"]
 [ext_resource type="Script" path="res://Left.gd" id="5_l57rc"]
 [ext_resource type="Script" path="res://Right/Right.gd" id="8_m1xpg"]
+[ext_resource type="PackedScene" uid="uid://dlwiskbmehqrc" path="res://Right/Tags/tag_list.tscn" id="8_r5jvk"]
+[ext_resource type="Script" path="res://Label.gd" id="8_wv4g7"]
+[ext_resource type="Script" path="res://Setup.gd" id="10_2g824"]
 
 [sub_resource type="Gradient" id="Gradient_6s63j"]
 interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.496774, 0.996774)
-colors = PackedColorArray(0.714289, 0.313964, 0.522272, 1, 0.77819, 0.399966, 0.895645, 1, 0.452219, 0.233523, 0.684839, 1)
+offsets = PackedFloat32Array(0, 0.496774, 0.992233)
+colors = PackedColorArray(0.714289, 0.313964, 0.522272, 1, 0.77819, 0.399966, 0.895645, 1, 0.559287, 0.421938, 0.82056, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vhmsu"]
 gradient = SubResource("Gradient_6s63j")
@@ -27,6 +30,9 @@ gradient = SubResource("Gradient_f46k6")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qr04"]
 bg_color = Color(0.121569, 0.121569, 0.121569, 0.192157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aeupa"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 0.0784314)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -110,12 +116,18 @@ script = ExtResource("1_45vwg")
 [node name="File" type="PopupMenu" parent="MenuBar"]
 theme = ExtResource("2_kh1tc")
 theme_override_font_sizes/font_size = 100
-item_count = 2
+item_count = 5
 item_0/text = "Save"
 item_0/id = 0
-item_1/text = ""
-item_1/id = 1
-item_1/separator = true
+item_1/text = "Load"
+item_1/id = 3
+item_2/text = "Load Most Recent"
+item_2/id = 4
+item_3/text = ""
+item_3/id = 1
+item_3/separator = true
+item_4/text = "Open Directory"
+item_4/id = 2
 
 [node name="Edit" type="PopupMenu" parent="MenuBar"]
 theme = ExtResource("2_kh1tc")
@@ -179,6 +191,8 @@ theme_override_constants/margin_top = 15
 
 [node name="Button" parent="Program/Left/ScrollContainer/VBoxContainer/Add" index="1"]
 theme_override_font_sizes/font_size = 75
+toggle_mode = false
+button_group = null
 text = "+"
 
 [node name="MarginContainer" parent="Program/Left/ScrollContainer/VBoxContainer/Add/Button" index="0"]
@@ -201,12 +215,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 290.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Program/Right/ScrollContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 10
+theme_override_constants/margin_left = 8
 theme_override_constants/margin_right = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Program/Right/ScrollContainer/MarginContainer"]
@@ -214,8 +229,105 @@ layout_mode = 2
 theme = ExtResource("2_kh1tc")
 theme_override_constants/separation = 15
 
+[node name="ScrollContainer2" type="ScrollContainer" parent="Program/Right"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 290.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aeupa")
+
+[node name="MarginContainer" type="MarginContainer" parent="Program/Right/ScrollContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="TagList" parent="Program/Right/ScrollContainer2/MarginContainer" instance=ExtResource("8_r5jvk")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("8_wv4g7")
+
+[node name="Setup" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_2g824")
+
+[node name="ColorRect" type="ColorRect" parent="Setup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+
+[node name="Label" type="Label" parent="Setup"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 110.0
+offset_top = -358.0
+offset_right = -95.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 72
+text = "Please enter your desired two letter ID code. (ex: ZC, MD, BK)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="LineEdit" type="LineEdit" parent="Setup"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -15.0
+offset_right = 310.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 72
+placeholder_text = "ZC"
+alignment = 1
+
+[node name="Button" type="Button" parent="Setup"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = 174.0
+offset_right = 112.0
+offset_bottom = 271.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "confirm"
+
 [connection signal="button_down" from="MenuBarDrag" to="MenuBarDrag" method="_on_button_down"]
 [connection signal="index_pressed" from="MenuBar/File" to="MenuBar" method="_on_file_index_pressed"]
 [connection signal="index_pressed" from="MenuBar/Edit" to="MenuBar" method="_on_edit_index_pressed"]
+[connection signal="pressed" from="Program/Left/ScrollContainer/VBoxContainer/Add/Button" to="Program/Left" method="_on_add_button_pressed"]
+[connection signal="pressed" from="Setup/Button" to="Setup" method="_on_button_pressed"]
 
 [editable path="Program/Left/ScrollContainer/VBoxContainer/Add"]

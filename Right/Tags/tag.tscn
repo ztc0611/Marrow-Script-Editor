@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq881a1rba31b"]
+
+[ext_resource type="Script" path="res://Right/Tags/Tag.gd" id="1_1yq5h"]
+[ext_resource type="Theme" uid="uid://cocwu0u4xq3l7" path="res://Theme2.tres" id="2_i4thg"]
+
+[node name="Tag" type="HBoxContainer"]
+script = ExtResource("1_1yq5h")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_i4thg")
+theme_override_colors/font_color = Color(1, 1, 1, 0.866667)
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8

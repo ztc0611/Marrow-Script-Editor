@@ -1,0 +1,297 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlwiskbmehqrc"]
+
+[ext_resource type="PackedScene" uid="uid://dq881a1rba31b" path="res://Right/Tags/tag.tscn" id="1_eux4x"]
+[ext_resource type="Script" path="res://Right/Tags/tag_list.gd" id="1_svttb"]
+[ext_resource type="Script" path="res://Right/Tags/checked.gd" id="2_2cgvj"]
+[ext_resource type="Theme" uid="uid://cocwu0u4xq3l7" path="res://Theme2.tres" id="2_kvo5s"]
+
+[node name="TagList" type="VBoxContainer"]
+script = ExtResource("1_svttb")
+
+[node name="Title" type="Panel" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 75)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tags"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+script = ExtResource("2_2cgvj")
+
+[node name="Tag" parent="VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Generic"
+
+[node name="Tag2" parent="VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "NotLookingAtPlayer"
+
+[node name="Outside" type="VBoxContainer" parent="."]
+layout_mode = 2
+script = ExtResource("2_2cgvj")
+
+[node name="Label" type="Label" parent="Outside"]
+layout_mode = 2
+theme = ExtResource("2_kvo5s")
+theme_override_font_sizes/font_size = 30
+text = "Outside"
+
+[node name="MarginContainer" type="MarginContainer" parent="Outside"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Outside/MarginContainer"]
+layout_mode = 2
+
+[node name="Tag" parent="Outside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "NearRiver"
+
+[node name="Tag2" parent="Outside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "NearWaterfall"
+
+[node name="Tag3" parent="Outside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "NearCliffBase"
+
+[node name="Tag10" parent="Outside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "OnCliff"
+
+[node name="Tag4" parent="Outside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "NearCliffEdge"
+
+[node name="Tag5" parent="Outside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "NearTree"
+
+[node name="Tag6" parent="Outside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "NearTreeFruit"
+
+[node name="Tag7" parent="Outside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "NearHomeSelf"
+
+[node name="Tag8" parent="Outside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "NearOcean"
+
+[node name="Tag9" parent="Outside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "OnBeach"
+
+[node name="Inside" type="VBoxContainer" parent="."]
+layout_mode = 2
+script = ExtResource("2_2cgvj")
+
+[node name="Label" type="Label" parent="Inside"]
+layout_mode = 2
+theme = ExtResource("2_kvo5s")
+theme_override_font_sizes/font_size = 30
+text = "Inside"
+
+[node name="MarginContainer" type="MarginContainer" parent="Inside"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inside/MarginContainer"]
+layout_mode = 2
+
+[node name="Tag" parent="Inside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Store"
+
+[node name="Tag2" parent="Inside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "HomeSelf"
+
+[node name="Tag3" parent="Inside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "PostOffice"
+
+[node name="Time" type="VBoxContainer" parent="."]
+layout_mode = 2
+script = ExtResource("2_2cgvj")
+
+[node name="Label" type="Label" parent="Time"]
+layout_mode = 2
+theme = ExtResource("2_kvo5s")
+theme_override_font_sizes/font_size = 30
+text = "Time"
+
+[node name="MarginContainer" type="MarginContainer" parent="Time"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Time/MarginContainer"]
+layout_mode = 2
+
+[node name="Tag" parent="Time/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Day"
+
+[node name="Tag2" parent="Time/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Night"
+
+[node name="Tag5" parent="Time/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Morning"
+
+[node name="Tag3" parent="Time/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Midday"
+
+[node name="Tag4" parent="Time/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Afternoon"
+
+[node name="Tag6" parent="Time/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Sunset"
+
+[node name="Tag7" parent="Time/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "EarlyNight"
+
+[node name="Tag8" parent="Time/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Midnight"
+
+[node name="Tag9" parent="Time/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "EarlyMorning"
+
+[node name="Weather" type="VBoxContainer" parent="."]
+layout_mode = 2
+script = ExtResource("2_2cgvj")
+
+[node name="Label" type="Label" parent="Weather"]
+layout_mode = 2
+theme = ExtResource("2_kvo5s")
+theme_override_font_sizes/font_size = 30
+text = "Weather"
+
+[node name="MarginContainer" type="MarginContainer" parent="Weather"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Weather/MarginContainer"]
+layout_mode = 2
+
+[node name="Tag" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Clear"
+
+[node name="Tag2" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "PartlyCloudy"
+
+[node name="Tag6" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Clear/PartCloud"
+
+[node name="Tag3" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Overcast"
+
+[node name="Tag4" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "OvercastThunder"
+
+[node name="Tag5" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Overcast"
+
+[node name="Tag10" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "RainAny"
+
+[node name="Tag12" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "RainAnyNoThunder"
+
+[node name="Tag7" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "RainLight"
+
+[node name="Tag8" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "RainMedium"
+
+[node name="Tag9" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "RainHeavy"
+
+[node name="Tag11" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "RainThunder"
+
+[node name="Tag13" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "SnowAny"
+
+[node name="Tag14" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "SnowLight"
+
+[node name="Tag15" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "SnowHeavy"
+
+[node name="Tag18" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "FogAny"
+
+[node name="Tag16" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "FogLight"
+
+[node name="Tag17" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "FogHeavy"
+
+[node name="Tools" type="VBoxContainer" parent="."]
+layout_mode = 2
+script = ExtResource("2_2cgvj")
+
+[node name="Label" type="Label" parent="Tools"]
+layout_mode = 2
+theme = ExtResource("2_kvo5s")
+theme_override_font_sizes/font_size = 30
+text = "Tools"
+
+[node name="MarginContainer" type="MarginContainer" parent="Tools"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tools/MarginContainer"]
+layout_mode = 2
+
+[node name="Tag" parent="Tools/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "FishingIdle"
+
+[node name="Tag2" parent="Tools/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "FishingCast"
+
+[node name="Tag3" parent="Tools/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "NetIdle"
+
+[node name="Tag4" parent="Tools/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "NetCharge"

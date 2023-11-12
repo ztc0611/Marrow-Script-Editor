@@ -1,6 +1,7 @@
 extends MenuBar
 
 var save = Shortcut.new()
+var load_recent = Shortcut.new()
 var undo = Shortcut.new()
 var redo = Shortcut.new()
 
@@ -9,6 +10,8 @@ var paste = Shortcut.new()
 
 func _ready():
 	save.set_events(InputMap.action_get_events("ui_save"))
+	load_recent.set_events(InputMap.action_get_events("ui_load_recent"))
+	
 	undo.set_events(InputMap.action_get_events("ui_undo"))
 	redo.set_events(InputMap.action_get_events("ui_redo"))
 	
@@ -16,6 +19,8 @@ func _ready():
 	paste.set_events(InputMap.action_get_events("ui_paste"))
 	
 	$File.set_item_shortcut(0, save)
+	$File.set_item_shortcut(2, load_recent)
+	
 	$Edit.set_item_shortcut(0, undo)
 	$Edit.set_item_shortcut(1, redo)
 	$Edit.set_item_shortcut(3, copy)
@@ -24,23 +29,35 @@ func _ready():
 
 func _on_edit_index_pressed(index):
 	if index == 0:
+		Global.get_undo()
 		print("undo")
+		print(Global.undo)
+		print(Global.undo_loc)
 	if index == 1:
-		print("redo")
+		Global.redo()
 
 func _on_file_index_pressed(index):
 	if index == 0:
 		Global.save()
+	if index == 2:
+		Global.load(true)
+	if index == 3:
+		print(OS.get_name())
+		if "mac" in OS.get_name():
+			print(ProjectSettings.globalize_path("user://"))
+			OS.shell_open("file://"+ProjectSettings.globalize_path("user://"))
+		else:
+			OS.shell_open(ProjectSettings.globalize_path("user://"))
 
 func _process(delta):
 	if Global.current == null or Global.undo_loc[Global.current] == 0:
-		$Edit.set_item_disabled(0,true)
+		$Edit.set_item_disabled(0, true)
 	else:
-		$Edit.set_item_disabled(0,false)
-	if Global.current == null or Global.undo_loc[Global.current] >= Global.undo[Global.current].size():
+		$Edit.set_item_disabled(0, true) ## TODO: change back to false
+	if Global.current == null or Global.undo_loc[Global.current] > Global.undo[Global.current].size():
 		$Edit.set_item_disabled(1, true)
 	else:
-		$Edit.set_item_disabled(1, false)
+		$Edit.set_item_disabled(1, true) ## TODO: change back to false
 	
 	if Global.is_focused:
 		$Edit.set_item_disabled(3, false)
