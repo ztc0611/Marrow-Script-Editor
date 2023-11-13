@@ -71,12 +71,12 @@ func set_current(l):
 		data[current] = current_data.duplicate(true)
 	current = l
 	current_data = data[l].duplicate(true)
+	get_tree().get_root().get_node_or_null("Control/Program/Right").rebuild_branches(current_data)
 	if current:
 		set_focused(false)
 	var il = int(l)
 	#print(data[l])
 	get_tree().get_root().get_node_or_null("Control/Program/Left").update_text_previews()
-	get_tree().get_root().get_node_or_null("Control/Program/Right").rebuild_branches(current_data)
 
 func build_undo():
 	for i in data:
@@ -154,7 +154,8 @@ func load(recent=false):
 			while file_name != "":
 				if !dir.current_is_dir():
 					print("Found directory: " + file_name)
-					unix.append(file_name)
+					var f_n = file_name.replace("--",":")
+					unix.append(f_n)
 				file_name = dir.get_next()
 		
 		var max = 0
@@ -164,6 +165,7 @@ func load(recent=false):
 				max = a
 		print(max)
 		max = Time.get_datetime_string_from_unix_time(max)
+		max = max.replace(":","--")
 		if dir:
 			dir.list_dir_begin()
 			var file_name = dir.get_next()
@@ -174,15 +176,13 @@ func load(recent=false):
 						#to_load = to_load.replace(":","/")
 				file_name = dir.get_next()
 	
+	print(to_load)
 	var f = FileAccess.open("user://"+to_load, FileAccess.READ)
 	print("user://"+to_load)
 	var json = JSON.new()
 	print(f)
 	data = json.parse_string(f.get_line())
 
-	print(data["ZC-0001"]["BRANCH-A"][0][0])
-	print(typeof(data["ZC-0001"]["BRANCH-A"][0][0]))
-	
 	print(data)
 	
 	get_tree().get_root().get_node_or_null("Control/Program/Left").build_sidebar(data)
@@ -197,7 +197,11 @@ func save(auto=false):
 	
 	get_tree().get_root().get_node_or_null("Control/Program/Right").save()
 	
-	var dir = "user://"+str(Time.get_datetime_string_from_system())
+	var name = str(Time.get_datetime_string_from_system())
+	name = name.replace(":","--")
+	print(name)
+	
+	var dir = "user://"+name
 	if auto:
 		dir += "-AUTO"
 	dir += ".txt"

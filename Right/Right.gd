@@ -23,6 +23,7 @@ func save():
 func rebuild_branches(data):
 	
 	print("       ",data)
+	mount2.reset_tags()
 	if data["TAGS"].size() > 0:
 		mount2.set_tags_from_global(data["TAGS"])
 	

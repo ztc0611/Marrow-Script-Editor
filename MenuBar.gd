@@ -41,7 +41,7 @@ func _on_file_index_pressed(index):
 		Global.save()
 	if index == 2:
 		Global.load(true)
-	if index == 3:
+	if index == 4:
 		print(OS.get_name())
 		if "mac" in OS.get_name():
 			print(ProjectSettings.globalize_path("user://"))

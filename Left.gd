@@ -19,7 +19,7 @@ func add_element(i):
 	var l = ListElement.instantiate()
 	var i_key = i
 	l.set_name("Convo-"+str(i_key))
-	l.set_text(i_key+": "+Global.get_text_preview(i_key))#str(Global.data[i][0][1]))
+	l.set_text(i_key+": "+str(Global.get_text_preview(i_key)))#str(Global.data[i][0][1]))
 	$ScrollContainer/VBoxContainer.add_child(l)
 	$ScrollContainer/VBoxContainer.move_child(l,1)
 	connect_buttons(l)
@@ -29,8 +29,7 @@ func update_text_previews():
 	print(list_elements)
 	for i in list_elements:
 		var i_key = i.get_id()
-		print(i_key+": "+Global.get_text_preview(i_key))
-		i.set_text(i_key+": "+Global.get_text_preview(i_key))
+		i.set_text(i_key+": "+str(Global.get_text_preview(i_key)))
 
 func connect_buttons(l):
 	var button = l.get_child(1)

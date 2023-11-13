@@ -115,11 +115,10 @@ script = ExtResource("1_45vwg")
 
 [node name="File" type="PopupMenu" parent="MenuBar"]
 theme = ExtResource("2_kh1tc")
-theme_override_font_sizes/font_size = 100
 item_count = 5
 item_0/text = "Save"
 item_0/id = 0
-item_1/text = "Load"
+item_1/text = " "
 item_1/id = 3
 item_2/text = "Load Most Recent"
 item_2/id = 4

@@ -26,13 +26,7 @@ func build_branch_from_global(d):
 		var se = add_script_element(n)
 		if i.size() > 0:
 			print(i[0])
-			var int_i = int(i[0])
-			if se.height_dict.has(int_i):
-				print(se.height_dict[int_i][1] == se.te)
-				if se.height_dict[int_i][1] == se.te:
-					se.resize(int_i)
-					se.current_text = i[1]
-					se.update_from_global()
+			se.update_from_global(i)
 	set_process(true)
 
 func _ready():

@@ -35,6 +35,39 @@ Text = "Generic"
 layout_mode = 2
 Text = "NotLookingAtPlayer"
 
+[node name="Personality" type="VBoxContainer" parent="."]
+layout_mode = 2
+script = ExtResource("2_2cgvj")
+
+[node name="Label" type="Label" parent="Personality"]
+layout_mode = 2
+theme = ExtResource("2_kvo5s")
+theme_override_font_sizes/font_size = 30
+text = "Personality"
+
+[node name="MarginContainer" type="MarginContainer" parent="Personality"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Personality/MarginContainer"]
+layout_mode = 2
+
+[node name="Tag4" parent="Personality/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Emo"
+
+[node name="Tag" parent="Personality/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Normal"
+
+[node name="Tag2" parent="Personality/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Spoiled"
+
+[node name="Tag3" parent="Personality/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Sporty"
+
 [node name="Outside" type="VBoxContainer" parent="."]
 layout_mode = 2
 script = ExtResource("2_2cgvj")
@@ -74,11 +107,15 @@ Text = "NearCliffEdge"
 
 [node name="Tag5" parent="Outside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
-Text = "NearTree"
+Text = "NearTreeNoFruit"
 
 [node name="Tag6" parent="Outside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
 Text = "NearTreeFruit"
+
+[node name="Tag11" parent="Outside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "NearTreeAny"
 
 [node name="Tag7" parent="Outside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
@@ -91,35 +128,6 @@ Text = "NearOcean"
 [node name="Tag9" parent="Outside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
 Text = "OnBeach"
-
-[node name="Inside" type="VBoxContainer" parent="."]
-layout_mode = 2
-script = ExtResource("2_2cgvj")
-
-[node name="Label" type="Label" parent="Inside"]
-layout_mode = 2
-theme = ExtResource("2_kvo5s")
-theme_override_font_sizes/font_size = 30
-text = "Inside"
-
-[node name="MarginContainer" type="MarginContainer" parent="Inside"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Inside/MarginContainer"]
-layout_mode = 2
-
-[node name="Tag" parent="Inside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
-layout_mode = 2
-Text = "Store"
-
-[node name="Tag2" parent="Inside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
-layout_mode = 2
-Text = "HomeSelf"
-
-[node name="Tag3" parent="Inside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
-layout_mode = 2
-Text = "PostOffice"
 
 [node name="Time" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -140,11 +148,11 @@ layout_mode = 2
 
 [node name="Tag" parent="Time/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
-Text = "Day"
+Text = "DayGeneric"
 
 [node name="Tag2" parent="Time/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
-Text = "Night"
+Text = "NightGeneric"
 
 [node name="Tag5" parent="Time/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
@@ -168,7 +176,11 @@ Text = "EarlyNight"
 
 [node name="Tag8" parent="Time/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
-Text = "Midnight"
+Text = "LateNight"
+
+[node name="Tag10" parent="Time/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Dawn"
 
 [node name="Tag9" parent="Time/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
@@ -263,6 +275,39 @@ Text = "FogLight"
 layout_mode = 2
 Text = "FogHeavy"
 
+[node name="Temperature" type="VBoxContainer" parent="."]
+layout_mode = 2
+script = ExtResource("2_2cgvj")
+
+[node name="Label" type="Label" parent="Temperature"]
+layout_mode = 2
+theme = ExtResource("2_kvo5s")
+theme_override_font_sizes/font_size = 30
+text = "Temperature"
+
+[node name="MarginContainer" type="MarginContainer" parent="Temperature"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Temperature/MarginContainer"]
+layout_mode = 2
+
+[node name="Tag" parent="Temperature/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Neutral"
+
+[node name="Tag2" parent="Temperature/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Cold"
+
+[node name="Tag4" parent="Temperature/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Freezing"
+
+[node name="Tag3" parent="Temperature/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Hot"
+
 [node name="Tools" type="VBoxContainer" parent="."]
 layout_mode = 2
 script = ExtResource("2_2cgvj")
@@ -295,3 +340,32 @@ Text = "NetIdle"
 [node name="Tag4" parent="Tools/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
 Text = "NetCharge"
+
+[node name="Inside" type="VBoxContainer" parent="."]
+layout_mode = 2
+script = ExtResource("2_2cgvj")
+
+[node name="Label" type="Label" parent="Inside"]
+layout_mode = 2
+theme = ExtResource("2_kvo5s")
+theme_override_font_sizes/font_size = 30
+text = "Inside"
+
+[node name="MarginContainer" type="MarginContainer" parent="Inside"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inside/MarginContainer"]
+layout_mode = 2
+
+[node name="Tag" parent="Inside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Store"
+
+[node name="Tag2" parent="Inside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "HomeSelf"
+
+[node name="Tag3" parent="Inside/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "PostOffice"

@@ -10,8 +10,8 @@ func is_checked():
 	if a == true:
 		return Text
 
+func disable_checks():
+	$CheckBox.button_pressed = false
+
 func set_checked(f):
-	if f.has(Text):
-		$CheckBox.button_pressed = true
-	else:
-		$CheckBox.button_pressed = false
+	$CheckBox.button_pressed = f.has(Text)
