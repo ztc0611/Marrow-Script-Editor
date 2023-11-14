@@ -73,6 +73,7 @@ popup/item_17/id = 300
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 31
 placeholder_text = "Me? Getting married and having a happy life would be OK, I guess..."
 wrap_mode = 1
 

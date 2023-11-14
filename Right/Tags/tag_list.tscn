@@ -35,6 +35,80 @@ Text = "Generic"
 layout_mode = 2
 Text = "NotLookingAtPlayer"
 
+[node name="Type" type="VBoxContainer" parent="."]
+layout_mode = 2
+script = ExtResource("2_2cgvj")
+
+[node name="Label" type="Label" parent="Type"]
+layout_mode = 2
+theme = ExtResource("2_kvo5s")
+theme_override_font_sizes/font_size = 30
+text = "ConvoType"
+
+[node name="MarginContainer" type="MarginContainer" parent="Type"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Type/MarginContainer"]
+layout_mode = 2
+
+[node name="Tag" parent="Type/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Greeting"
+
+[node name="Tag2" parent="Type/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Conversation"
+
+[node name="Tag4" parent="Type/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "ConvoRejected"
+
+[node name="Tag3" parent="Type/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Ping"
+
+[node name="Friendship Level" type="VBoxContainer" parent="."]
+layout_mode = 2
+script = ExtResource("2_2cgvj")
+
+[node name="Label" type="Label" parent="Friendship Level"]
+layout_mode = 2
+theme = ExtResource("2_kvo5s")
+theme_override_font_sizes/font_size = 30
+text = "FriendLevel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Friendship Level"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Friendship Level/MarginContainer"]
+layout_mode = 2
+
+[node name="Tag" parent="Friendship Level/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Friendship1"
+
+[node name="Tag2" parent="Friendship Level/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Friendship2"
+
+[node name="Tag3" parent="Friendship Level/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Friendship3"
+
+[node name="Tag4" parent="Friendship Level/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Friendship4"
+
+[node name="Tag5" parent="Friendship Level/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Friendship5"
+
+[node name="Tag6" parent="Friendship Level/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "Friendship6"
+
 [node name="Personality" type="VBoxContainer" parent="."]
 layout_mode = 2
 script = ExtResource("2_2cgvj")
@@ -327,19 +401,19 @@ layout_mode = 2
 
 [node name="Tag" parent="Tools/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
-Text = "FishingIdle"
+Text = "NPCFishingIdle"
 
 [node name="Tag2" parent="Tools/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
-Text = "FishingCast"
+Text = "NPCFishingCast"
 
 [node name="Tag3" parent="Tools/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
-Text = "NetIdle"
+Text = "NPCNetIdle"
 
 [node name="Tag4" parent="Tools/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
-Text = "NetCharge"
+Text = "NPCNetCharge"
 
 [node name="Inside" type="VBoxContainer" parent="."]
 layout_mode = 2
