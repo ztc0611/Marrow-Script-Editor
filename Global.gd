@@ -12,6 +12,7 @@ var is_focused = false
 
 const autosave_frq = 60*1
 @onready var autosave = autosave_frq
+var autosave_data = {}
 
 func _ready():
 	find_id()
@@ -140,7 +141,12 @@ func _process(delta):
 	autosave-= delta
 	if autosave < 0:
 		autosave = autosave_frq
-		save(true)
+		if autosave_data != data:
+			autosave_data = data.duplicate(true)
+			save(true)
+			print("autosaved")
+		else:
+			print("didnt autosave because nothing changed")
 
 func load(recent=false):
 	

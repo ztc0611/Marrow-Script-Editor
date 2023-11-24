@@ -24,8 +24,8 @@ func build_branch_from_global(d):
 	build_script_list()
 	for i in d:
 		print("i:",i)
-		var n = script_list.size()+1
-		var se = add_script_element(n+2) ## If you dont have +2 prepare for a bad time...
+		#var n = script_list.size()+1
+		var se = add_script_element(-1) ## If you dont have +2 prepare for a bad time...
 		if i.size() > 0:
 			print(i[0])
 			se.update_from_global(i)
@@ -73,15 +73,32 @@ func _on_pressed(button):
 func add_script_element(n):
 	
 	var se = SE.instantiate()
-	add_child(se)
-	self.move_child(se, n)
-	script_list.insert(n, se)
 	
-	var ab = AB.instantiate()
-	add_child(ab)
-	self.move_child(ab, n)
-	script_list.insert(n, ab)
+	if n > 0:
 	
-	connect_buttons()
+		add_child(se)
+		self.move_child(se, n)
+		script_list.insert(n, se)
+		
+		var ab = AB.instantiate()
+		add_child(ab)
+		self.move_child(ab, n)
+		script_list.insert(n, ab)
+		
+		connect_buttons()
+	
+	else:
+
+		add_child(se)
+		self.move_child(se, n)
+		script_list.append(se)
+		
+		var ab = AB.instantiate()
+		add_child(ab)
+		self.move_child(ab, n)
+		script_list.append(se)
+		
+		connect_buttons()
+		
 	
 	return se
