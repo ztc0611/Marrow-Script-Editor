@@ -1,15 +1,15 @@
 [gd_scene load_steps=17 format=3 uid="uid://b4co7p8pdes7c"]
 
-[ext_resource type="Script" path="res://MenuBar.gd" id="1_45vwg"]
-[ext_resource type="PackedScene" uid="uid://cxc73re3ai44h" path="res://List_Element.tscn" id="1_ivi7j"]
-[ext_resource type="Script" path="res://MenuBarDrag.gd" id="1_ooris"]
-[ext_resource type="Script" path="res://V.gd" id="2_gdmhi"]
-[ext_resource type="Theme" uid="uid://bqssc5gl8k82k" path="res://Theme1.tres" id="2_kh1tc"]
-[ext_resource type="Script" path="res://Left.gd" id="5_l57rc"]
+[ext_resource type="PackedScene" uid="uid://cxc73re3ai44h" path="res://Left/List_Element.tscn" id="1_ivi7j"]
+[ext_resource type="Script" path="res://Misc/MenuBarDrag.gd" id="1_qgtmh"]
+[ext_resource type="Script" path="res://Misc/V.gd" id="2_oq84l"]
+[ext_resource type="Script" path="res://Misc/MenuBar.gd" id="3_l7xfk"]
+[ext_resource type="Theme" uid="uid://bqssc5gl8k82k" path="res://Left/Theme1.tres" id="4_f2wel"]
+[ext_resource type="Script" path="res://Left/Left.gd" id="5_l57rc"]
 [ext_resource type="Script" path="res://Right/Right.gd" id="8_m1xpg"]
 [ext_resource type="PackedScene" uid="uid://dlwiskbmehqrc" path="res://Right/Tags/tag_list.tscn" id="8_r5jvk"]
-[ext_resource type="Script" path="res://Label.gd" id="8_wv4g7"]
-[ext_resource type="Script" path="res://Setup.gd" id="10_2g824"]
+[ext_resource type="Script" path="res://Left/Label.gd" id="9_bwpah"]
+[ext_resource type="Script" path="res://Misc/Setup.gd" id="10_djqjg"]
 
 [sub_resource type="Gradient" id="Gradient_6s63j"]
 interpolation_mode = 2
@@ -64,7 +64,7 @@ action_mode = 0
 texture_normal = SubResource("GradientTexture1D_t4s8h")
 texture_pressed = SubResource("GradientTexture1D_t4s8h")
 stretch_mode = 0
-script = ExtResource("1_ooris")
+script = ExtResource("1_qgtmh")
 
 [node name="Label" type="Label" parent="MenuBarDrag"]
 visible = false
@@ -98,7 +98,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 22
 text = "v1.0.0   "
 horizontal_alignment = 2
-script = ExtResource("2_gdmhi")
+script = ExtResource("2_oq84l")
 
 [node name="HTTPRequest" type="HTTPRequest" parent="MenuBarDrag/Version"]
 
@@ -111,10 +111,10 @@ offset_bottom = 50.0
 grow_horizontal = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 30
-script = ExtResource("1_45vwg")
+script = ExtResource("3_l7xfk")
 
 [node name="File" type="PopupMenu" parent="MenuBar"]
-theme = ExtResource("2_kh1tc")
+theme = ExtResource("4_f2wel")
 item_count = 5
 item_0/text = "Save"
 item_0/id = 0
@@ -129,7 +129,7 @@ item_4/text = "Open Directory"
 item_4/id = 2
 
 [node name="Edit" type="PopupMenu" parent="MenuBar"]
-theme = ExtResource("2_kh1tc")
+theme = ExtResource("4_f2wel")
 item_count = 5
 item_0/text = "Undo"
 item_0/id = 0
@@ -171,7 +171,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0qr04")
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
@@ -225,7 +224,7 @@ theme_override_constants/margin_right = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Program/Right/ScrollContainer/MarginContainer"]
 layout_mode = 2
-theme = ExtResource("2_kh1tc")
+theme = ExtResource("4_f2wel")
 theme_override_constants/separation = 15
 
 [node name="ScrollContainer2" type="ScrollContainer" parent="Program/Right"]
@@ -251,7 +250,7 @@ visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-script = ExtResource("8_wv4g7")
+script = ExtResource("9_bwpah")
 
 [node name="Setup" type="Control" parent="."]
 visible = false
@@ -261,7 +260,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("10_2g824")
+script = ExtResource("10_djqjg")
 
 [node name="ColorRect" type="ColorRect" parent="Setup"]
 layout_mode = 1

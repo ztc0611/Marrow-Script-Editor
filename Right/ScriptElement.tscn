@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bp0yr4lgytwj3"]
 
-[ext_resource type="Theme" uid="uid://cocwu0u4xq3l7" path="res://Theme2.tres" id="1_4fn62"]
+[ext_resource type="Theme" uid="uid://cocwu0u4xq3l7" path="res://Right/Theme2.tres" id="1_ffubj"]
 [ext_resource type="Script" path="res://Right/ScriptElement.gd" id="2_h3gim"]
 
 [node name="ScriptElement" type="Panel"]
 custom_minimum_size = Vector2(500, 64)
 offset_right = 500.0
-offset_bottom = 190.0
-theme = ExtResource("1_4fn62")
+offset_bottom = 260.0
+theme = ExtResource("1_ffubj")
 script = ExtResource("2_h3gim")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -17,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_4fn62")
+theme = ExtResource("1_ffubj")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -26,7 +26,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(2.08165e-12, 42)
 layout_mode = 2
 alignment = 1
-item_count = 18
+item_count = 19
 popup/item_0/text = "🗑️ ⚠Delete⚠ 🗑️"
 popup/item_0/id = 0
 popup/item_1/text = "↳💭Developer Comment"
@@ -68,6 +68,8 @@ popup/item_16/id = 16
 popup/item_16/separator = true
 popup/item_17/text = "⚁2 Choice"
 popup/item_17/id = 300
+popup/item_18/text = "⚂3 Choice"
+popup/item_18/id = 301
 
 [node name="TextEdit" type="TextEdit" parent="MarginContainer/VBoxContainer"]
 visible = false
@@ -81,7 +83,7 @@ wrap_mode = 1
 visible = false
 custom_minimum_size = Vector2(2.08165e-12, 42)
 layout_mode = 2
-theme = ExtResource("1_4fn62")
+theme = ExtResource("1_ffubj")
 alignment = 1
 item_count = 10
 popup/item_0/text = "A"
@@ -113,7 +115,7 @@ layout_mode = 2
 [node name="Label" type="TextEdit" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("1_4fn62")
+theme = ExtResource("1_ffubj")
 placeholder_text = "Choice 1"
 
 [node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
@@ -147,13 +149,47 @@ layout_mode = 2
 [node name="Label" type="TextEdit" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("1_4fn62")
+theme = ExtResource("1_ffubj")
 placeholder_text = "Choice 2"
 
 [node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 item_count = 9
 selected = 2
+popup/item_0/text = "A"
+popup/item_0/id = 0
+popup/item_1/text = "B"
+popup/item_1/id = 1
+popup/item_2/text = "C"
+popup/item_2/id = 2
+popup/item_3/text = "D"
+popup/item_3/id = 3
+popup/item_4/text = "E"
+popup/item_4/id = 4
+popup/item_5/text = "F"
+popup/item_5/id = 5
+popup/item_6/text = "G"
+popup/item_6/id = 6
+popup/item_7/text = "H"
+popup/item_7/id = 7
+popup/item_8/text = "I"
+popup/item_8/id = 8
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(2.08165e-12, 60)
+layout_mode = 2
+
+[node name="Label" type="TextEdit" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ffubj")
+placeholder_text = "Choice 3"
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+item_count = 9
+selected = 3
 popup/item_0/text = "A"
 popup/item_0/id = 0
 popup/item_1/text = "B"

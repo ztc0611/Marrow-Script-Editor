@@ -16,14 +16,17 @@ config/use_custom_user_dir=true
 config/custom_user_dir_name="MarrowScriptEdit"
 config/features=PackedStringArray("4.1", "Mobile")
 boot_splash/bg_color=Color(0.196078, 0.101961, 0.188235, 1)
-config/icon="res://icon.svg"
+boot_splash/image="res://Lily/lily.png"
+boot_splash/use_filter=false
+config/icon="res://Lily/lily_large_windows.png"
+config/macos_native_icon="res://Lily/mac.icns"
 
 [autoload]
 
-Global="*res://Global.gd"
-Settings="*res://Settings.gd"
+Global="*res://Autoload/Global.gd"
+Settings="*res://Autoload/Settings.gd"
 ButtonAdder="*res://Right/ButtonAdder.gd"
-Version="*res://Version.gd"
+Version="*res://Autoload/Version.gd"
 
 [debug]
 

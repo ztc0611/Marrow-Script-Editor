@@ -13,7 +13,7 @@ func reset_tags():
 			i.reset_tags()
 
 func set_tags_from_global(data):
-	print(self.get_children())
+	#print(self.get_children())
 	for i in self.get_children():
 		if not "Title" in i.name:
 			i.set_checked_tags(data)

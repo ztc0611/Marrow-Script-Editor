@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dq881a1rba31b" path="res://Right/Tags/tag.tscn" id="1_eux4x"]
 [ext_resource type="Script" path="res://Right/Tags/tag_list.gd" id="1_svttb"]
 [ext_resource type="Script" path="res://Right/Tags/checked.gd" id="2_2cgvj"]
-[ext_resource type="Theme" uid="uid://cocwu0u4xq3l7" path="res://Theme2.tres" id="2_kvo5s"]
+[ext_resource type="Theme" uid="uid://cocwu0u4xq3l7" path="res://Right/Theme2.tres" id="2_kvo5s"]
 
 [node name="TagList" type="VBoxContainer"]
 script = ExtResource("1_svttb")
@@ -126,13 +126,25 @@ theme_override_constants/margin_left = 5
 [node name="VBoxContainer" type="VBoxContainer" parent="Personality/MarginContainer"]
 layout_mode = 2
 
+[node name="Tag" parent="Personality/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "AnyPersonality"
+
+[node name="Tag6" parent="Personality/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "P-Airhead"
+
+[node name="Tag7" parent="Personality/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+layout_mode = 2
+Text = "P-Chill"
+
 [node name="Tag4" parent="Personality/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
 Text = "P-Emo"
 
-[node name="Tag" parent="Personality/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
+[node name="Tag5" parent="Personality/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
-Text = "P-Normal"
+Text = "P-Nerd"
 
 [node name="Tag2" parent="Personality/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
@@ -296,10 +308,6 @@ Text = "Overcast"
 [node name="Tag4" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
 Text = "OvercastThunder"
-
-[node name="Tag5" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
-layout_mode = 2
-Text = "Overcast"
 
 [node name="Tag10" parent="Weather/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2

@@ -1,6 +1,6 @@
 extends Control
 
-@onready var ListElement = preload("res://List_Element.tscn")
+@onready var ListElement = preload("res://Left/List_Element.tscn")
 @export var buttonGroupDefault : ButtonGroup
 
 var list_elements = []
@@ -26,7 +26,7 @@ func add_element(i):
 	list_elements.append(l)
 
 func update_text_previews():
-	print(list_elements)
+	#print(list_elements)
 	for i in list_elements:
 		var i_key = i.get_id()
 		i.set_text(i_key+": "+str(Global.get_text_preview(i_key)))
@@ -37,7 +37,7 @@ func connect_buttons(l):
 	button.pressed.connect(_on_pressed.bind(l))
 
 func _on_pressed(button):
-	print(str("Button '", buttonGroupDefault.get_pressed_button().name, "' in the ButtonGroup has been pressed."))
+	#print(str("Button '", buttonGroupDefault.get_pressed_button().name, "' in the ButtonGroup has been pressed."))
 	Global.set_current(button.get_id())
 
 func _on_add_button_pressed():
