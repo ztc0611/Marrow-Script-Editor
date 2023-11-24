@@ -128,19 +128,19 @@ layout_mode = 2
 
 [node name="Tag4" parent="Personality/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
-Text = "Emo"
+Text = "P-Emo"
 
 [node name="Tag" parent="Personality/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
-Text = "Normal"
+Text = "P-Normal"
 
 [node name="Tag2" parent="Personality/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
-Text = "Spoiled"
+Text = "P-Spoiled"
 
 [node name="Tag3" parent="Personality/MarginContainer/VBoxContainer" instance=ExtResource("1_eux4x")]
 layout_mode = 2
-Text = "Sporty"
+Text = "P-Sporty"
 
 [node name="Outside" type="VBoxContainer" parent="."]
 layout_mode = 2

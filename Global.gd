@@ -102,21 +102,22 @@ func get_undo():
 
 func set_undo():
 	
-	print(undo[current].back())
-	print(current_data)
+	#print(undo[current].back())
+	#print(current_data)
 	
 	if !undo[current]:
 		undo[current] = []
 	
 	if undo[current].back() != current_data:
-		print("Not the same...")
+		#print("Not the same...")
 		purge_redo_tree()
 		undo[current].append(current_data.duplicate(true))
 		undo_loc[current] += 1
 		#if undo[current].size() > 50:
 			#undo[current].pop_front()
 	else:
-		print("Arrays are the same.")
+		pass
+		#print("Arrays are the same.")
 
 func purge_redo_tree():
 	for i in range(undo_loc[current]+1, undo[current].size()):

@@ -18,12 +18,14 @@ func get_branch_dict():
 	return ret
 
 func build_branch_from_global(d):
+	print(d)
 	for i in range(2,self.get_children().size()):
 		self.get_children()[i].queue_free()
 	build_script_list()
 	for i in d:
+		print("i:",i)
 		var n = script_list.size()+1
-		var se = add_script_element(n)
+		var se = add_script_element(n+2) ## If you dont have +2 prepare for a bad time...
 		if i.size() > 0:
 			print(i[0])
 			se.update_from_global(i)
