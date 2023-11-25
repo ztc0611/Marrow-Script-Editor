@@ -78,7 +78,9 @@ func update_from_global(i):
 	
 	var int_i = int(i[0])
 	if height_dict.has(int_i):
-		#print(height_dict[int_i][1] == te)
+		print("  ", int_i)
+		print("    ",height_dict[int_i])
+		print("       ",height_dict[int_i][1])
 		if int_i == 300:
 			resize(int_i)
 			i = i[1]
@@ -86,7 +88,7 @@ func update_from_global(i):
 			choice_2[0].get_node("OptionButton").selected = i[0][1]
 			choice_2[1].get_node("Label").text = i[1][0]
 			choice_2[1].get_node("OptionButton").selected = i[1][1]
-		if int_i == 301:
+		elif int_i == 301: # STOP FORGETTING ELSE IFS
 			resize(int_i)
 			i = i[1]
 			choice_3[0].get_node("Label").text = i[0][0]
