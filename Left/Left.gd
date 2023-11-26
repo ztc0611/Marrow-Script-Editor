@@ -43,3 +43,6 @@ func _on_pressed(button):
 func _on_add_button_pressed():
 	var a = Global.new_data()
 	add_element(a)
+	list_elements.back().get_child(1).button_pressed = true
+	Global.set_current(a)
+	return a

@@ -115,18 +115,23 @@ script = ExtResource("3_l7xfk")
 
 [node name="File" type="PopupMenu" parent="MenuBar"]
 theme = ExtResource("4_f2wel")
-item_count = 5
-item_0/text = "Save"
-item_0/id = 0
-item_1/text = " "
-item_1/id = 3
-item_2/text = "Load Most Recent"
-item_2/id = 4
-item_3/text = ""
-item_3/id = 1
-item_3/separator = true
-item_4/text = "Open Directory"
-item_4/id = 2
+item_count = 7
+item_0/text = "New Conversation"
+item_0/id = 5
+item_1/text = ""
+item_1/id = 6
+item_1/separator = true
+item_2/text = "Save"
+item_2/id = 0
+item_3/text = " "
+item_3/id = 3
+item_4/text = "Load Most Recent"
+item_4/id = 4
+item_5/text = ""
+item_5/id = 1
+item_5/separator = true
+item_6/text = "Open Data Directory"
+item_6/id = 2
 
 [node name="Edit" type="PopupMenu" parent="MenuBar"]
 theme = ExtResource("4_f2wel")
@@ -142,6 +147,12 @@ item_3/text = "Copy"
 item_3/id = 0
 item_4/text = "Paste"
 item_4/id = 3
+
+[node name="Help" type="PopupMenu" parent="MenuBar"]
+theme = ExtResource("4_f2wel")
+item_count = 1
+item_0/text = "Open Docs"
+item_0/id = 0
 
 [node name="Program" type="Control" parent="."]
 layout_mode = 1
@@ -325,6 +336,7 @@ text = "confirm"
 [connection signal="button_down" from="MenuBarDrag" to="MenuBarDrag" method="_on_button_down"]
 [connection signal="index_pressed" from="MenuBar/File" to="MenuBar" method="_on_file_index_pressed"]
 [connection signal="index_pressed" from="MenuBar/Edit" to="MenuBar" method="_on_edit_index_pressed"]
+[connection signal="index_pressed" from="MenuBar/Help" to="MenuBar" method="_on_help_index_pressed"]
 [connection signal="pressed" from="Program/Left/ScrollContainer/VBoxContainer/Add/Button" to="Program/Left" method="_on_add_button_pressed"]
 [connection signal="pressed" from="Setup/Button" to="Setup" method="_on_button_pressed"]
 

@@ -30,6 +30,9 @@ func set_writer_id(a):
 	guy.store_line(a)
 	writer_id = a
 
+func new_convo(): ##For shortcut
+	var a = get_tree().get_root().get_node_or_null("Control/Program/Left")._on_add_button_pressed()
+
 func new_data():
 	var max = 0
 	var a
