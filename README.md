@@ -1,5 +1,5 @@
 # Marrow Script Editor
-An open source program written to allow easy editing of dialouge hash maps, friendly to non-programmers. It is based on the dialouge system of Animal Crossing, primarily Wild World. It was created in Godot 4 so it should run on all major operating systems.
+An open source program written to allow easy editing of dialouge JSON data, friendly to non-programmers. It is based on the dialouge system of Animal Crossing, primarily Wild World. It was created in Godot 4 so it should run on all major operating systems.
 <img width="1012" alt="image" src="https://github.com/ztc0611/Marrow-Script-Editor/assets/28269330/f05d74c6-2396-481b-b293-2f25db684a31">
 
 ## How do I use this?
