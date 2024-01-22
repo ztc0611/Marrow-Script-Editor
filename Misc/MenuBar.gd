@@ -56,7 +56,7 @@ func _on_file_index_pressed(index):
 
 func _on_help_index_pressed(index):
 	if index == 0:
-		OS.shell_open("https://docs.google.com/spreadsheets/d/16wHT-VC1N0trv0zDz9DBKBtlvYSVGZuvEu6-syQeFy8/edit#gid=0")
+		OS.shell_open("https://github.com/ztc0611/Marrow-Script-Editor/blob/main/README.md")
 
 func _process(delta):
 	if Global.current == null or Global.undo_loc[Global.current] == 0:

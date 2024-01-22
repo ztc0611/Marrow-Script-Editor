@@ -41,28 +41,28 @@ var th = 236 #Text Box Height
 func dump_data():
 	if current_ID < 1:
 		return []
-	if height_dict[current_ID][1] == choice_2:
+	if current_ID == 300:
 		return [current_ID, [[$MarginContainer/VBoxContainer/HBoxContainer/Label.text, $MarginContainer/VBoxContainer/HBoxContainer/OptionButton.selected], \
 		[$MarginContainer/VBoxContainer/HBoxContainer2/Label.text, $MarginContainer/VBoxContainer/HBoxContainer2/OptionButton.selected]]]
-	elif height_dict[current_ID][1] == choice_3:
+	elif current_ID == 301 or current_ID == 310:
 		return [current_ID, [[$MarginContainer/VBoxContainer/HBoxContainer/Label.text, $MarginContainer/VBoxContainer/HBoxContainer/OptionButton.selected], \
 		[$MarginContainer/VBoxContainer/HBoxContainer2/Label.text, $MarginContainer/VBoxContainer/HBoxContainer2/OptionButton.selected], \
 		[$MarginContainer/VBoxContainer/HBoxContainer3/Label.text, $MarginContainer/VBoxContainer/HBoxContainer3/OptionButton.selected]]]
-	elif height_dict[current_ID][1] == choice_4:
+	elif current_ID == 302:
 		return [current_ID, [[$MarginContainer/VBoxContainer/HBoxContainer/Label.text, $MarginContainer/VBoxContainer/HBoxContainer/OptionButton.selected], \
 		[$MarginContainer/VBoxContainer/HBoxContainer2/Label.text, $MarginContainer/VBoxContainer/HBoxContainer2/OptionButton.selected], \
 		[$MarginContainer/VBoxContainer/HBoxContainer3/Label.text, $MarginContainer/VBoxContainer/HBoxContainer3/OptionButton.selected], \
 		[$MarginContainer/VBoxContainer/HBoxContainer4/Label.text, $MarginContainer/VBoxContainer/HBoxContainer4/OptionButton.selected] ]]
-	elif height_dict[current_ID][1] == choice_5:
+	elif current_ID == 303 or current_ID == 311:
 		return [current_ID, [[$MarginContainer/VBoxContainer/HBoxContainer/Label.text, $MarginContainer/VBoxContainer/HBoxContainer/OptionButton.selected], \
 		[$MarginContainer/VBoxContainer/HBoxContainer2/Label.text, $MarginContainer/VBoxContainer/HBoxContainer2/OptionButton.selected], \
 		[$MarginContainer/VBoxContainer/HBoxContainer3/Label.text, $MarginContainer/VBoxContainer/HBoxContainer3/OptionButton.selected], \
 		[$MarginContainer/VBoxContainer/HBoxContainer4/Label.text, $MarginContainer/VBoxContainer/HBoxContainer4/OptionButton.selected], \
 		[$MarginContainer/VBoxContainer/HBoxContainer5/Label.text, $MarginContainer/VBoxContainer/HBoxContainer5/OptionButton.selected] ]]
-	elif height_dict[current_ID][1] == te:
-		return [current_ID, current_text]
 	elif current_ID == 200:
 		return [current_ID, br_goto.selected]
+	elif height_dict[current_ID][1] == te:
+		return [current_ID, current_text]
 	else:
 		return [current_ID, ""]
 
@@ -140,14 +140,14 @@ func update_from_global(i):
 		print("  ", int_i)
 		print("    ",height_dict[int_i])
 		print("       ",height_dict[int_i][1])
-		if height_dict[int_i][1] == choice_2: ## TODO: I know this can be cleaned up as its mostly copy pasted code but I cant think of how to right now.
+		if int_i == 300: ## TODO: I know this can be cleaned up as its mostly copy pasted code but I cant think of how to right now.
 			resize(int_i)
 			i = i[1]
 			choice_2[0].get_node("Label").text = i[0][0]
 			choice_2[0].get_node("OptionButton").selected = i[0][1]
 			choice_2[1].get_node("Label").text = i[1][0]
 			choice_2[1].get_node("OptionButton").selected = i[1][1]
-		elif height_dict[int_i][1] == choice_3: # STOP FORGETTING ELSE IFS
+		elif int_i == 301 or int_i == 310:
 			resize(int_i)
 			i = i[1]
 			choice_3[0].get_node("Label").text = i[0][0]
@@ -156,7 +156,7 @@ func update_from_global(i):
 			choice_3[1].get_node("OptionButton").selected = i[1][1]
 			choice_3[2].get_node("Label").text = i[2][0]
 			choice_3[2].get_node("OptionButton").selected = i[2][1]
-		elif height_dict[int_i][1] == choice_4:
+		elif int_i == 302:
 			resize(int_i)
 			i = i[1]
 			choice_4[0].get_node("Label").text = i[0][0]
@@ -167,7 +167,7 @@ func update_from_global(i):
 			choice_4[2].get_node("OptionButton").selected = i[2][1]
 			choice_4[3].get_node("Label").text = i[3][0]
 			choice_4[3].get_node("OptionButton").selected = i[3][1]
-		elif height_dict[int_i][1] == choice_5:
+		elif int_i == 303 or int_i == 311:
 			resize(int_i)
 			i = i[1]
 			choice_5[0].get_node("Label").text = i[0][0]
