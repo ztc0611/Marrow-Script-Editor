@@ -2,6 +2,8 @@
 An open source program written to allow easy editing of dialouge JSON data, friendly to non-programmers. It is based on the dialouge system of Animal Crossing, primarily Wild World. It was created in Godot 4 so it should run on all major operating systems.
 <img width="1012" alt="image" src="https://github.com/ztc0611/Marrow-Script-Editor/assets/28269330/f05d74c6-2396-481b-b293-2f25db684a31">
 
+Originally made so my non-programmer friends could help me script dialogue for a project.
+
 ## How do I use this?
 You will have to write your own implimentation of the text display. However, this should be possible to use cross-engine. It can also be modified to work for different types of dialouge systems or to have new line display types.
 
